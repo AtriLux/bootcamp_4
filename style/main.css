@@ -1,0 +1,38 @@
+@font-face {
+	font-family: 'Circe';
+    src: url('font/Circe-Regular.woff2');
+}
+@font-face {
+    font-family: 'Adine';
+    src: url('font/AdineKirnberg-Regular.woff');
+}
+.layout {
+    max-width: 1000px;
+    margin: 0 auto;
+    font-family: Circe, sans-serif;
+    background-color: #efefef;
+}
+header {
+    width: 100%;
+    height: 70px;
+    background-color: #006be5;
+    color: white;
+    display: flex;
+}
+.header__back-btn {
+    width: 50px;
+    height: 50px;
+    margin: 10px 10px;
+    background-image: url("../img/service/header__back-btn.png");
+    background-size: contain;
+    display: none;
+}
+.header__title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    line-height: 70px;
+    padding-right: 20px;
+    margin-left: auto;
+}

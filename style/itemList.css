@@ -1,0 +1,78 @@
+.category__title {
+    font-size: 20px;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+    text-align: center;
+    padding-top: 20px;
+}
+.category__description {
+    font-size: 40px;
+    text-align: center;
+    padding-top: 15px;
+    font-family: Adine, sans-serif;
+}
+.item__list {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    align-items: center;
+}
+a {
+    text-decoration: none;
+    color: black;
+}
+.card {
+    width: 210px;
+    height: 340px;
+    margin-top: 30px;
+}
+.card__top {
+    text-align: center;
+    height: 150px;
+    font-size: 30px;
+    padding-top: 70px;
+    background-color: #29a2f8;
+    color: white;
+    font-weight: 900;
+    letter-spacing: 1.5px;
+    text-transform: uppercase;
+}
+.card__image {
+    background-color: white;
+    background-size: 95%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+.card__bottom {
+    padding: 15px;
+    background-color: white;
+    color: #29a2f8;
+    font-size: 12px;
+    width: 180px;
+    height: 60px;
+    box-shadow: 0 3px 5px rgba(122,122,122,0.5);
+}
+.card__bottom-title {
+    font-size: 15px;
+    font-weight: 900;
+    letter-spacing: 1px;
+    height: 50px;
+    text-transform: uppercase;
+    color: black;
+    display: flex;
+    align-items: center;
+}
+.list__break {
+    flex-basis: 100%;
+    height: 0px;
+}
+.list__pages {
+    font-size: 20px;
+}
+.list__pages a + a {
+    margin-left: 20px;
+}
+.list__pages--underline {
+    text-decoration: underline;
+}
