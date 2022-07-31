@@ -1,8 +1,7 @@
 insert into category(name, description) 
 	values  ('Бытовая техника', 'Все для быта!'),
-			('Цифровая техника', 'Все для цифры!'), 
-			('Б/у техника', 'Всегда дешевле рыночной стоимости!'),
-            ('Хлам', 'Бесплатно отдадим в хорошие руки.');
+			('Цифровая техника', 'Цифровой рай для каждого!'), 
+			('Б/у техника', 'Всегда дешевле рыночной стоимости!');
 insert into image(url, alt)
 	values  ('img/product/1.png', 'Фото стиральной машины'), 
 			('img/product/1_2.png', 'Фото стиральной машины сбоку'),
@@ -12,19 +11,33 @@ insert into image(url, alt)
             ('img/product/4.png', 'Фото духового шкафа'),
             ('img/product/5.png', 'Фото холодильника'),
             ('img/product/6.png', 'Фото кофемашины'),
-            ('img/product/6_2.png', 'Фото кофемашины сзади');
+            ('img/product/6_2.png', 'Фото кофемашины сзади'),
+            ('img/product/7.png', 'Фото индукционной электроплиты'),
+            ('img/product/8.png', 'Фото пылесоса'),
+            ('img/product/8_2.png', 'Фото пылесоса сбоку'),
+            ('img/product/9.png', 'Фото утюга'),
+            ('img/product/9_2.png', 'Фото утюга сверху'),
+            ('img/product/9_3.png', 'Фото утюга снизу'),
+            ('img/product/10.png', 'Фото ручного пылесоса'),
+            ('img/product/11.png', 'Фото микроволновой СВЧ-печи');
 insert into product(name, price, price_sale, price_promocode, main_category, main_image, description, is_active) 
 	values  ('Стиральная машина X1', 8599, 7599, 6599, (select category_id from category where name = 'Б/у техника'), (select image_id from image where url = 'img/product/1.png'), 'Отстирает и пятна, и принт на футболке.', true),
-			('Стиральная машина X2', 10599, 8599, 7599, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/1.png'), 'Аннигилирует вещи в 2 раза быстрее.', true),
+			('Стиральная машина X2', 10599, 8599, 7599, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/1_2.png'), 'Аннигилирует вещи в 2 раза быстрее.', true),
             ('Газовая плита OLD', 1599, NULL, NULL, (select category_id from category where name = 'Б/у техника'), (select image_id from image where url = 'img/product/2.png'), 'Осторожно! Чрезмерное употребление газа вредно для здоровья!', true),
-            ('Электроплита YOUNG', 15099, 13099, 12099, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/3.png'), 'Новое поколение - новый способы обжечься', true),
-            ('Духовой шкаф ЖАРА', 8799, 8499, 8099, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/4.png'), 'Жарит не по-детски', true),
-            ('Духовой шкаф DuShNy', 4599, 4559, NULL, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/4.png'), 'Тот еще душнила', false),
-            ('Холодильник Yes, Frost', 15999, 13999, 10999, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/5.png'), 'Как с No Frost, только хуже', true),
-            ('Кофемашина Nirvana', 2499, 2399, 2299, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/6.png'), 'Кофеин как новый наркотик', true),
-            ('Кофемашина R2D2', 3499, 2899, 2599, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/6_2.png'), 'Пип-пиу-пам-пум', true);
--- нет товаров в категории хлам
--- часть товаров относится и к бытовой технике, и к б/у технике
+            ('Электроплита YOUNG', 15099, 13099, 12099, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/3.png'), 'Новое поколение - новый способы обжечься.', true),
+            ('Духовой шкаф ЖАРА', 8799, 8499, 8099, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/4.png'), 'Жарит не по-детски.', true),
+            ('Духовой шкаф DuShNy', 4599, 4559, NULL, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/4.png'), 'Тот еще душнила.', false),
+            ('Холодильник Yes, Frost', 15999, 13999, 10999, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/5.png'), 'Как с No Frost, только хуже.', true),
+            ('Кофемашина Nirvana', 2499, 2399, 2299, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/6.png'), 'Кофеин как новый наркотик.', true),
+            ('Кофемашина R2D2', 3499, 2899, 2599, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/6_2.png'), 'Пип-пиу-пам-пум.', true),
+            ('Кофемашина ПОДЖАРКА', 2099, NULL, 1799, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/6.png'), 'Горячее - не сырое, горелое - не пропащее.', true),
+            ('Электроплита Красный Модник', 4999, 3699, 3599, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/7.png'), 'Импортозамещаем названия, но не товары.', true),
+            ('Пылесос Желтизна', 14999, 13699, 13499, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/8.png'), 'Превосходно собирает пыль, но только желтого цвета.', true),
+            ('Пылесос Желток', 16999, NULL, NULL, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/8_2.png'), 'Почти как старшая модель, только дороже.', true),
+            ('Утюг Филипп Бедросович', 4599, 4099, 3699, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/9.png'), 'Цвет настроения: красный.', true),
+            ('Утюг RedHot', 4499, 4199, 4099, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/9_2.png'), 'Красный и горячий. Сложно не обжечься.', true),
+            ('Ручной пылесос Strong Hand', 2999, 2599, 2399, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/10.png'), 'Качаем правую руку законными методами.', true),
+            ('Микроволновая СВЧ-печь ВОЛНА', 3599, 3099, 2799, (select category_id from category where name = 'Бытовая техника'), (select image_id from image where url = 'img/product/11.png'), 'Не подходит для разогрева телефонов, батареек, котов и бывших парней.', true);
 insert into product_category
 	values  ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Стиральная машина X1')),
 			((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Стиральная машина X2')),
@@ -35,23 +48,47 @@ insert into product_category
             ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Холодильник Yes, Frost')),
             ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Кофемашина Nirvana')),
             ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Кофемашина R2D2')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Кофемашина ПОДЖАРКА')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Электроплита Красный Модник')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Пылесос Желтизна')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Пылесос Желток')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Утюг Филипп Бедросович')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Утюг RedHot')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Ручной пылесос Strong Hand')),
+            ((select category_id from category where name = 'Бытовая техника'), (select product_id from product where name = 'Микроволновая СВЧ-печь ВОЛНА')),
             ((select category_id from category where name = 'Б/у техника'), (select product_id from product where name = 'Стиральная машина X1')),
             ((select category_id from category where name = 'Б/у техника'), (select product_id from product where name = 'Газовая плита OLD')), 
             ((select category_id from category where name = 'Б/у техника'), (select product_id from product where name = 'Духовой шкаф DuShNy')), 
-            ((select category_id from category where name = 'Б/у техника'), (select product_id from product where name = 'Холодильник Yes, Frost'));
--- некоторые изображения использованы повторно (стиральные машины, духовые шкафы, кофемашины)
--- некоторые изображение являются главными у одного товара и дополнительными у другого (кофемашины)
+            ((select category_id from category where name = 'Б/у техника'), (select product_id from product where name = 'Холодильник Yes, Frost')),
+            ((select category_id from category where name = 'Б/у техника'), (select product_id from product where name = 'Кофемашина ПОДЖАРКА'));
 insert into product_image
 	values  ((select image_id from image where url = 'img/product/1.png'), (select product_id from product where name = 'Стиральная машина X1')),
+			((select image_id from image where url = 'img/product/1_2.png'), (select product_id from product where name = 'Стиральная машина X1')),
+			((select image_id from image where url = 'img/product/1_3.png'), (select product_id from product where name = 'Стиральная машина X1')), 
 			((select image_id from image where url = 'img/product/1.png'), (select product_id from product where name = 'Стиральная машина X2')),
+			((select image_id from image where url = 'img/product/1_2.png'), (select product_id from product where name = 'Стиральная машина X2')),
+			((select image_id from image where url = 'img/product/1_3.png'), (select product_id from product where name = 'Стиральная машина X2')), 
             ((select image_id from image where url = 'img/product/2.png'), (select product_id from product where name = 'Газовая плита OLD')),
             ((select image_id from image where url = 'img/product/3.png'), (select product_id from product where name = 'Электроплита YOUNG')),
             ((select image_id from image where url = 'img/product/4.png'), (select product_id from product where name = 'Духовой шкаф ЖАРА')),
             ((select image_id from image where url = 'img/product/4.png'), (select product_id from product where name = 'Духовой шкаф DuShNy')),
             ((select image_id from image where url = 'img/product/5.png'), (select product_id from product where name = 'Холодильник Yes, Frost')),
             ((select image_id from image where url = 'img/product/6.png'), (select product_id from product where name = 'Кофемашина Nirvana')),
+			((select image_id from image where url = 'img/product/6_2.png'), (select product_id from product where name = 'Кофемашина Nirvana')),
+            ((select image_id from image where url = 'img/product/6.png'), (select product_id from product where name = 'Кофемашина R2D2')),
             ((select image_id from image where url = 'img/product/6_2.png'), (select product_id from product where name = 'Кофемашина R2D2')),
-            ((select image_id from image where url = 'img/product/1_2.png'), (select product_id from product where name = 'Стиральная машина X1')),
-			((select image_id from image where url = 'img/product/1_3.png'), (select product_id from product where name = 'Стиральная машина X1')), 
-            ((select image_id from image where url = 'img/product/6_2.png'), (select product_id from product where name = 'Кофемашина Nirvana')),
-            ((select image_id from image where url = 'img/product/6.png'), (select product_id from product where name = 'Кофемашина R2D2'));
+            ((select image_id from image where url = 'img/product/6.png'), (select product_id from product where name = 'Кофемашина ПОДЖАРКА')),
+			((select image_id from image where url = 'img/product/6_2.png'), (select product_id from product where name = 'Кофемашина ПОДЖАРКА')),
+            ((select image_id from image where url = 'img/product/7.png'), (select product_id from product where name = 'Электроплита Красный Модник')),
+            ((select image_id from image where url = 'img/product/8.png'), (select product_id from product where name = 'Пылесос Желтизна')),
+            ((select image_id from image where url = 'img/product/8_2.png'), (select product_id from product where name = 'Пылесос Желтизна')),
+            ((select image_id from image where url = 'img/product/8.png'), (select product_id from product where name = 'Пылесос Желток')),
+            ((select image_id from image where url = 'img/product/8_2.png'), (select product_id from product where name = 'Пылесос Желток')),
+            ((select image_id from image where url = 'img/product/9.png'), (select product_id from product where name = 'Утюг Филипп Бедросович')),
+            ((select image_id from image where url = 'img/product/9_2.png'), (select product_id from product where name = 'Утюг Филипп Бедросович')),
+            ((select image_id from image where url = 'img/product/9_3.png'), (select product_id from product where name = 'Утюг Филипп Бедросович')),
+            ((select image_id from image where url = 'img/product/9.png'), (select product_id from product where name = 'Утюг RedHot')),
+            ((select image_id from image where url = 'img/product/9_2.png'), (select product_id from product where name = 'Утюг RedHot')),
+            ((select image_id from image where url = 'img/product/9_3.png'), (select product_id from product where name = 'Утюг RedHot')),
+            ((select image_id from image where url = 'img/product/10.png'), (select product_id from product where name = 'Ручной пылесос Strong Hand')),
+            ((select image_id from image where url = 'img/product/11.png'), (select product_id from product where name = 'Микроволновая СВЧ-печь ВОЛНА'));

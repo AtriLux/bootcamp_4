@@ -1,8 +1,11 @@
-create database if not exists bootcamp_sivirilova;
+drop database bootcamp_sivirilova;
+create database if not exists bootcamp_sivirilova
+	character set utf8
+	collate utf8_general_ci;
 use bootcamp_sivirilova;
 create table category (
 	category_id int auto_increment,
-    name varchar(40) not null unique,
+    name varchar(100) not null unique,
     description varchar(200),
     primary key (category_id)
 );
@@ -14,7 +17,7 @@ create table image (
 );
 create table product (
 	product_id int auto_increment,
-    name varchar(40) not null unique,
+    name varchar(100) not null unique,
     price int unsigned not null,
     price_sale int unsigned, -- без not null: возможно товар без скидки
     price_promocode int unsigned, -- без not null: возможно не действует промокод
@@ -37,4 +40,14 @@ create table product_image(
     product_id int not null,
     foreign key (image_id) references image(image_id) on delete cascade on update cascade,
     foreign key (product_id) references product(product_id) on delete cascade on update cascade
+);
+create table feedback(
+	id int auto_increment,
+    name varchar(100) not null,
+    email varchar(100) not null,
+    birth_year int not null,
+    gender char not null,
+    theme varchar(100) not null,
+    question varchar(1000) not null,
+    primary key (id)
 );

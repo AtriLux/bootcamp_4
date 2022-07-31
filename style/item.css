@@ -151,7 +151,7 @@ input::-webkit-inner-spin-button {
     font-size: 12px;
     font-weight: 900;
     letter-spacing: 1px;
-
+    border-radius: 2px;
 }
 .item__btn--blue {
     background-color: #006be5;

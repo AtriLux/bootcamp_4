@@ -40,7 +40,7 @@ a {
 }
 .card__image {
     background-color: white;
-    background-size: 95%;
+    background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
