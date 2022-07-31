@@ -1,6 +1,6 @@
 <?php
     if (!defined('READFILE')) {
-        exit ("Неправильный путь к файлу! Вернитесь на<a href=\"index.php\">главную</a>.");
+        exit ("Неправильный путь к файлу! Вернитесь на <a href=\"index.php\">главную</a>.");
     }
 
     $id = (int) $_GET['cat_id'];
